@@ -72,9 +72,9 @@ sudo dnf install php-{common,mysql,xml,xmlrpc,curl,gd,imagick,cli,dev,imap,mbstr
 
 #cp -f [oringinal file] [new file]
 
-cat config-files/php.ini > /etc/php.ini
+cat php.ini > /etc/php.ini
 
-cat config-files/www.conf > /etc/php-fpm.d/www.conf
+cat www.conf > /etc/php-fpm.d/www.conf
 
 sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php.ini
 
