@@ -174,10 +174,11 @@ cp -f staging-api.willshub.co.conf /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/staging-api.willshub.co.conf /etc/nginx/sites-enabled/staging-api.willshub.co.conf
 
 
-
-
 sudo systemctl restart nginx
 
+
+echo "<?php phpinfo(); ?>" > /var/www/staging-api.willshub.co/public/index.php
+echo "<?php phpinfo(); ?>" > /var/www/willshub.co/public/index.php
 
 # git clone https://username:password@github.com/username/repository.git
 # git clone https://abojihad01:516002Simo@github.com/mythpe/willshubcom-api.git
