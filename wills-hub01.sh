@@ -138,5 +138,44 @@ cp -f staging-app.willshub.co.conf /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/staging-app.willshub.co.conf /etc/nginx/sites-enabled/staging-app.willshub.co.conf
 
 
+# production-api.willshub.co
+
+
+sudo mkdir -p /var/www/production-api.willshub.co/public
+
+sudo chown -R $USER:$USER /var/www/production-api.willshub.co/public
+
+sudo chcon -t httpd_sys_content_t /var/www/production-api.willshub.co -R
+
+sudo chcon -t httpd_sys_rw_content_t /var/www/production-api.willshub.co -R
+
+
+cp -f production-api.willshub.co.conf /etc/nginx/sites-available/
+
+sudo ln -s /etc/nginx/sites-available/production-api.willshub.co.conf /etc/nginx/sites-enabled/production-api.willshub.co.conf
+
+
+# staging-api.willshub.co
+
+
+sudo mkdir -p /var/www/staging-api.willshub.co/public
+
+sudo chown -R $USER:$USER /var/www/staging-api.willshub.co/public
+
+sudo chcon -t httpd_sys_content_t /var/www/staging-api.willshub.co -R
+
+sudo chcon -t httpd_sys_rw_content_t /var/www/staging-api.willshub.co -R
+
+
+cp -f staging-api.willshub.co.conf /etc/nginx/sites-available/
+
+sudo ln -s /etc/nginx/sites-available/staging-api.willshub.co.conf /etc/nginx/sites-enabled/staging-api.willshub.co.conf
+
+
+
 
 sudo systemctl restart nginx
+
+
+# git clone https://username:password@github.com/username/repository.git
+# git clone https://abojihad01:516002Simo@github.com/mythpe/willshubcom-api.git
