@@ -76,6 +76,8 @@ cat php.ini > /etc/php.ini
 
 cat www.conf > /etc/php-fpm.d/www.conf
 
+cat nginx.conf > /etc/nginx/nginx.conf
+
 sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php.ini
 
 sudo systemctl restart php-fpm.service
