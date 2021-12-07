@@ -180,5 +180,15 @@ sudo systemctl restart nginx
 echo "<?php phpinfo(); ?>" > /var/www/staging-api.willshub.co/public/index.php
 echo "<?php phpinfo(); ?>" > /var/www/willshub.co/public/index.php
 
+
+sudo dnf install -y php-cli php-json php-zip wget unzip
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+composer -V
+
+
 # git clone https://username:password@github.com/username/repository.git
 # git clone https://abojihad01:516002Simo@github.com/mythpe/willshubcom-api.git
